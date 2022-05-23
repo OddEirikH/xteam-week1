@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rutenett</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 100px;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            margin: -150px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+        
+        .square {
+            background-color: none;
+            border: solid 1px black;
+        }
+        
+        img {
+            height: 98px;
+            width: 98px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="square" id="r1k1" onclick="trykk(this, 'r1k2', 'r2k1','r2k1','r2k1')"><img src="img/3.jpg"> </div>
+        <div class="square" id="r1k2" onclick="trykk(this, 'r1k1', 'r1k3','r2k2','r2k2')"><img src="img/7.jpg"> </div>
+        <div class="square" id="r1k3" onclick="trykk(this, 'r1k2', 'r2k3','r2k3','r2k3')"><img src="img/5.jpg"> </div>
+
+        <div class="square" id="r2k1" onclick="trykk(this, 'r2k2', 'r1k1', 'r3k1', 'r3k1')"><img src="img/8.jpg"> </div>
+        <div class="square" id="r2k2" onclick="trykk(this, 'r1k2', 'r2k1','r2k3', 'r3k2')"></div>
+        <div class="square" id="r2k3" onclick="trykk(this, 'r1k3', 'r2k2', 'r3k3','r3k3')"><img src="img/1.jpg"> </div>
+
+        <div class="square" id="r3k1" onclick="trykk(this, 'r2k1', 'r3k2', 'r3k2', 'r3k2')"><img src="img/6.jpg"> </div>
+        <div class="square" id="r3k2" onclick="trykk(this, 'r3k1', 'r3k3', 'r2k2', 'r2k2')"><img src="img/2.jpg"> </div>
+        <div class="square" id="r3k3" onclick="trykk(this, 'r3k2', 'r2k3', 'r2k3', 'r2k3')"><img src="img/4.jpg"> </div>
+    </div>
+</body>
+
+
+
+<script>
+    function trykk(tagElement, alt1, alt2, alt3, alt4) {
+        if (document.getElementById(alt1).innerHTML == '') {
+            document.getElementById(alt1).innerHTML = tagElement.innerHTML;
+            tagElement.innerHTML = '';
+        }
+        if (document.getElementById(alt2).innerHTML == '') {
+            document.getElementById(alt2).innerHTML = tagElement.innerHTML;
+            tagElement.innerHTML = '';
+        }
+        if (document.getElementById(alt3).innerHTML == '') {
+            document.getElementById(alt3).innerHTML = tagElement.innerHTML;
+            tagElement.innerHTML = '';
+        }
+        if (document.getElementById(alt4).innerHTML == '') {
+            document.getElementById(alt4).innerHTML = tagElement.innerHTML;
+            tagElement.innerHTML = '';
+        }
+    }
+</script>
+
+</html>
